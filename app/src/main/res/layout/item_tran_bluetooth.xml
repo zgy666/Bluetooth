@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding_10">
+
+    <ImageView
+        android:id="@+id/itb_iv_vo"
+        android:layout_width="@dimen/dimen_35"
+        android:layout_height="@dimen/dimen_35"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/bluetooth"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tran_blue"
+        android:layout_toStartOf="@id/itb_iv_vo"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/itb_tv_src"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/dimen_15"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/text_16"
+            android:textColor="#80cef9"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/itb_iv_goTTS"
+                android:layout_width="@dimen/dimen_25"
+                android:layout_height="@dimen/dimen_25"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:src="@drawable/tts_voice_playing3"/>
+
+            <TextView
+                android:id="@+id/itb_tv_dst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/itb_iv_goTTS"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/text_16"
+                android:textColor="@color/colorBlack" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

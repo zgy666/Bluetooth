@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f9faf9"
+    tools:context="com.zgy.translate.activitys.VoiceTranslateActivity">
+
+    <RelativeLayout
+        android:id="@+id/avt_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorCommon"
+        android:padding="@dimen/padding_10">
+
+        <LinearLayout
+            android:id="@+id/avt_ll_tranTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/dimen_20"
+                android:layout_height="@dimen/dimen_20"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:src="@mipmap/top_phone"/>
+
+            <TextView
+                android:id="@+id/avt_tv_tranLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_18"
+                android:textColor="@color/colorText"
+                android:text="@string/tran_zn"/>
+
+            <ImageView
+                android:layout_width="@dimen/dimen_30"
+                android:layout_height="@dimen/dimen_15"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:layout_marginTop="2dp"
+                android:src="@mipmap/tran_change"/>
+
+            <TextView
+                android:id="@+id/avt_tv_tranRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_18"
+                android:textColor="@color/colorText"
+                android:text="@string/tran_cn"/>
+
+            <ImageView
+                android:layout_width="@dimen/dimen_20"
+                android:layout_height="@dimen/dimen_20"
+                android:layout_marginStart="@dimen/margin_10"
+                android:src="@mipmap/top_blue"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/avt_iv_setting"
+            android:layout_width="@dimen/dimen_25"
+            android:layout_height="@dimen/dimen_25"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@mipmap/setting"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/avt_iv_voice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/tran_voice"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/avt_rl"
+        android:layout_above="@id/avt_iv_voice">
+
+        <ViewStub
+            android:id="@+id/avt_vs_netCon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout="@layout/common_unable_to_connect"/>
+
+        <LinearLayout
+            android:id="@+id/avt_ll_showConState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/colorText"
+            android:padding="@dimen/padding_10"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/avt_iv_showCon_icon"
+                android:layout_width="@dimen/dimen_25"
+                android:layout_height="@dimen/dimen_25"
+                android:src="@mipmap/connect_suc"/>
+
+            <TextView
+                android:id="@+id/avt_tv_showConText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_5"
+                android:textSize="@dimen/text_14"
+                android:textColor="@color/colorBlack" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/avt_rv_tranContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/avt_ll_wlv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="150dp"
+        android:layout_centerInParent="true"
+        android:background="@color/colorBlack"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_20"
+        android:alpha="0.6"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/avt_tv_showInputType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:textSize="@dimen/text_16"
+            android:textColor="@color/colorText"/>
+
+        <!--&lt;!&ndash;<jaygoo.widget.wlv.WaveLineView-->
+            <!--android:id="@+id/avt_wlv"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="120dp"-->
+            <!--wlv:wlvBackgroundColor="@android:color/transparent"-->
+            <!--wlv:wlvLineColor="@color/colorText"-->
+            <!--wlv:wlvMoveSpeed="290"/>&ndash;&gt;-->
+
+        <ImageView
+            android:id="@+id/avt_iv_microVolume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/microphone1"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/avt_ll_noFindDevice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/avt_iv_noFindDeviceIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/avt_tv_noFindDeviceText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_40"
+            android:lineSpacingExtra="3dp"
+            android:gravity="center"
+            android:textSize="@dimen/text_16"
+            android:textColor="@color/colordcdcdc"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/avt_iv_guide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/first_1"
+        android:visibility="gone"/>
+</RelativeLayout>

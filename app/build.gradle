@@ -1,0 +1,115 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.jakewharton.butterknife'
+apply from: 'tinker-support.gradle'
+//apply from: 'multiple-channel.gradle'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+    defaultConfig {
+        applicationId "com.zgy.translate"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'armeabi' //, 'armeabi-v7a', 'arm64-v8a', 'x86' , 'x86_64'
+        }
+    }
+
+    /*lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }*/
+
+    // 签名配置
+    signingConfigs {
+        release {
+            try {
+                storeFile file("./keystore/release.jks")
+                storePassword "123456"
+                keyAlias "apollo"
+                keyPassword "123456"
+                //zipAlignEnabled true
+                //shrinkResources true
+                //v1SigningEnabled true
+                //v2SigningEnabled true
+            } catch (ex) {
+                throw new InvalidUserDataException(ex.toString())
+            }
+        }
+
+        debug {
+            storeFile file('debug.keystore')
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    dexOptions {
+        //javaMaxHeapSize "2g"
+        jumboMode = true
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(path: ':lib_imagepicker')
+    compile "org.greenrobot:eventbus:${rootProject.ext.eventbusLibVersion}"
+    compile "com.google.code.gson:gson:${rootProject.ext.gsonLibVersion}"
+    compile "com.github.bumptech.glide:glide:${rootProject.ext.glideLibVersion}"
+    compile "io.reactivex.rxjava2:rxjava:${rootProject.ext.rxjava2LibVersion}"
+    compile "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxandroidLibVersion}"
+    compile "com.tbruyelle.rxpermissions2:rxpermissions:${rootProject.ext.rxpermissions2LibVersion}"
+    compile "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofit2LibVersion}"
+    compile "com.squareup.retrofit2:converter-scalars:${rootProject.ext.retrofit2LibVersion}"
+    compile "com.squareup.retrofit2:converter-gson:${rootProject.ext.retrofit2LibVersion}"
+    compile "com.squareup.retrofit2:adapter-rxjava2:${rootProject.ext.retrofit2LibVersion}"
+    compile "com.squareup.okhttp3:logging-interceptor:${rootProject.ext.okhttp3LogLibVersion}"
+    compile "com.jakewharton:butterknife:${rootProject.ext.butterknifeLibVersion}"
+    compile "com.tencent.bugly:crashreport_upgrade:${rootProject.ext.crashreportLibVersion}"
+    compile "com.meituan.android.walle:library:${rootProject.ext.walleLibVersion}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknifeLibVersion}"
+    compile "com.squareup.leakcanary:leakcanary-android:${rootProject.ext.leakcanaryLibVersion}"//debugCompile
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.tencent.bugly:nativecrashreport:latest.release'
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    //compile 'com.android.support:support-v4:26.0.0-alpha1'
+    compile 'com.android.support:design:26.0.0-alpha1'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.github.Jay-Goo:WaveLineView:v1.0.3'
+    compile 'top.zibin:Luban:1.1.3'
+    compile 'com.android.support:support-annotations:26.1.0'
+    compile 'me.drakeet.support:toastcompat:1.0.2'
+    compile 'com.contrarywind:Android-PickerView:3.2.4'
+
+}

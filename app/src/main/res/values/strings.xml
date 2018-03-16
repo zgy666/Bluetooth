@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">小淘智能耳机</string>
+    <string name="share_title">翻译</string>
+    <string name="title_activity_ble_device_manager">BleDeviceManagerActivity</string>
+
+    <string name="tran_cn">中文</string>
+    <string name="tran_zn">英文</string>
+
+    <string name="phone_num">手机号:</string>
+    <string name="phone_code">验证码:</string>
+    <string name="phone_msg">密码:</string>
+    <string name="phone_msg_again">确认密码:</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="forget_msg">忘记密码?</string>
+
+    <string name="device_manager">设备管理</string>
+    <string name="share_other">推荐给朋友</string>
+    <string name="often_question">常见问题</string>
+    <string name="about">关于</string>
+    <string name="exit">退出登录</string>
+    <string name="no_find_device_up">未找到授权的耳机设备\n请前往系统蓝牙设置里进行耳机配对</string>
+    <string name="no_find_device_down">请前往系统蓝牙设置里进行耳机配对</string>
+
+    <string name="cancle">取消</string>
+    <string name="title">请选择时间</string>
+    <string name="commit">确定</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
+    <string name="hour">时</string>
+    <string name="minute">分</string>
+
+    <string name="select_date">选择日期</string>
+    <string name="current_date">当前日期</string>
+    <string name="select_time">选择时间</string>
+    <string name="current_time">当前时间</string>
+
+</resources>

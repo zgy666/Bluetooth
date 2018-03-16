@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorText"
+    android:padding="@dimen/padding_10">
+
+    <include layout="@layout/common_horizontal_line"/>
+
+    <ImageView
+        android:id="@+id/ibbd_iv_icon"
+        android:layout_width="@dimen/dimen_25"
+        android:layout_height="@dimen/dimen_40"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/device"/>
+
+    <ImageView
+        android:id="@+id/ibbd_iv_startBonded"
+        android:layout_width="@dimen/dimen_25"
+        android:layout_height="@dimen/dimen_25"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/start_bonded"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/ibbd_iv_icon"
+        android:layout_toStartOf="@id/ibbd_iv_startBonded"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:paddingRight="@dimen/padding_10"
+        android:paddingLeft="@dimen/padding_10">
+
+        <TextView
+            android:id="@+id/ibbd_tv_bondedName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/ibbd_tv_bondedState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

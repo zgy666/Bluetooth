@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/libs/umeng_social_net.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="9603755bacad940bdd0f607f5039efc718663fb5">
+        <dex dex="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/build/intermediates/transforms/dex/debug/folders/1000/2/umeng_social_net_c3b8143410e3e3e62e8c29e0e1e5b06a330a78b7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/libs/SocialSDK_email.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e1aef280701218c75f50f12c2fca64d97ef6ff1a">
+        <dex dex="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/build/intermediates/transforms/dex/debug/folders/1000/2/SocialSDK_email_bea76dd5d3711725f8f115859fff2e8537dcacb9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d981e3e5d4dcbeba51ddab8803cb970ec94a93a4">
+        <dex dex="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_ef497a07ee1dddc8d918ecaec904d3c390d5351f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouguangyue/.android/build-cache/f8e8c27ad601c799a7cea4d679903c2add37843d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c2a70f69bd593ee7a3e0eeccea84c8af65170d64">
+        <dex dex="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1407a02f2e0d0d049add32a7b8775210577bcf41/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/libs/umeng_social_shareboard.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="547bd886984b4451428acd630820d74feb338500">
+        <dex dex="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/build/intermediates/transforms/dex/debug/folders/1000/2/umeng_social_shareboard_f10325aff562bff45643f135402e60a3ece58f2e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/libs/umeng_social_tool.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="87ef211d4ef0c257c7d040fbaa411832330eb9aa">
+        <dex dex="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/build/intermediates/transforms/dex/debug/folders/1000/2/umeng_social_tool_264c04c90c5fc912feaf42ddde1914f2ecdde67b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_65fcf767080446e101e5367c949b29092009c072/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/libs/SocialSDK_QQ_Simplify.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="2cdb335c27be5061624c591f4019a1777ed19915">
+        <dex dex="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/build/intermediates/transforms/dex/debug/folders/1000/2/SocialSDK_QQ_Simplify_6854ebad1ae72770cd8e3fdf109975834b97b9d6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/libs/umeng_social_api.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="cd6bb618f89e5b0afe960490ba36300f37240201">
+        <dex dex="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/build/intermediates/transforms/dex/debug/folders/1000/2/umeng_social_api_c40372a54e39805e686855b273338d056bde7fec/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/libs/umeng_shareboard_widget.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8e60ccaf3827e07e530e664bfe63c398de6917ff">
+        <dex dex="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/build/intermediates/transforms/dex/debug/folders/1000/2/umeng_shareboard_widget_5b6caf4670181af21ee123df6868243dd4ef1c82/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/libs/umeng-common-1.4.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="147e43ba842606e0d203c2997d4f95d90d76a3aa">
+        <dex dex="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/build/intermediates/transforms/dex/debug/folders/1000/2/umeng-common-1.4.1_1760cdb6ba846dc8a70afcdd6c6194080c5cd0f3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/libs/Msc.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c780862c40d4942fe3e0df73f24a4c47e6b6650d">
+        <dex dex="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/build/intermediates/transforms/dex/debug/folders/1000/2/Msc_7f961c88ac6d5c1c34ff603cc56fb0350fa0783c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/libs/umeng_social_shareview.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="cb9ced6b9b5e95f98ee05e3e080c11cbd275b44f">
+        <dex dex="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/build/intermediates/transforms/dex/debug/folders/1000/2/umeng_social_shareview_0c75ee645283013eafad307e68c632998341e07e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/libs/SocialSDK_sms.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c12484acc6d648bcfeec224ff6af92584cda96f8">
+        <dex dex="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/build/intermediates/transforms/dex/debug/folders/1000/2/SocialSDK_sms_3f26d240d015eb6e0ab9e11ea86b3ba40ceef74b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/libs/SocialSDK_WeChat_Simplify.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="9e42d677973f60698291f643344f945b6b5546c8">
+        <dex dex="/Users/zhouguangyue/workspace/github/translate/translate_app/Translate/app/build/intermediates/transforms/dex/debug/folders/1000/2/SocialSDK_WeChat_Simplify_97ed837eedb1f4400d4c7d49c1c7a20f8f04defc/classes.dex" />
+    </item>
+
+</items>
