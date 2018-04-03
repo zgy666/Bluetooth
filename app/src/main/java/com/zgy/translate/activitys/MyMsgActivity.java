@@ -148,6 +148,16 @@ public class MyMsgActivity extends BaseActivity implements CommonBar.CommonBarIn
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.CHINA);
         nowDate = sdf.format(new Date());
 
+        String dataString = nowDate.split(" ")[0];
+        int endYear = Integer.valueOf(dataString.split("-")[0]);
+        int endMont = Integer.valueOf(dataString.split("-")[1]);
+        int endData = Integer.valueOf(dataString.split("-")[2]);
+
+        Calendar startDate = Calendar.getInstance();
+        startDate.set(1900, 0, 1);//设置起始年份
+        Calendar endDate = Calendar.getInstance();
+        endDate.set(endYear, endMont - 1, endData);//设置结束年份
+
         timePickerView = new TimePickerView.Builder(this, new TimePickerView.OnTimeSelectListener() {
             @Override
             public void onTimeSelect(Date date, View v) {
@@ -171,7 +181,7 @@ public class MyMsgActivity extends BaseActivity implements CommonBar.CommonBarIn
 //                        .setBgColor(0xFF333333)//滚轮背景颜色 Night mode
 //                        .setRange(calendar.get(Calendar.YEAR) - 20, calendar.get(Calendar.YEAR) + 20)//默认是1900-2100年
 //                        .setDate(selectedDate)// 如果不设置的话，默认是系统时间*/
-//                        .setRangDate(startDate,endDate)//起始终止年月日设定
+                        .setRangDate(startDate,endDate)//起始终止年月日设定
 //                        .setLabel("年","月","日","时","分","秒")
                 .isCenterLabel(false) //是否只显示中间选中项的label文字，false则每项item全部都带有label。
 //                        .isDialog(true)//是否显示为对话框样式
