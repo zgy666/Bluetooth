@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -30,6 +30,11 @@
             android:textColor="@color/colorBT"
             android:text="1、是看得见斯柯达富锦市看似简单付款了时间的\n2、达康书记是打开即可"/>
 
-    </LinearLayout>
+    </LinearLayout>-->
+
+    <ImageView
+        android:id="@+id/iq_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

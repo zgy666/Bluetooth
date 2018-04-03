@@ -12,7 +12,7 @@
         android:id="@+id/aq_cb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        bar:bar_title="常见问题"
+        bar:bar_title="使用帮助"
         bar:show_left="true"/>
 
    <android.support.v7.widget.RecyclerView

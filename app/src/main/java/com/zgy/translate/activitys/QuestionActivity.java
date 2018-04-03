@@ -1,6 +1,5 @@
 package com.zgy.translate.activitys;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -8,8 +7,10 @@ import android.support.v7.widget.RecyclerView;
 import com.zgy.translate.R;
 import com.zgy.translate.adapters.QuestionAdapter;
 import com.zgy.translate.base.BaseActivity;
-import com.zgy.translate.controllers.RequestController;
 import com.zgy.translate.widget.CommonBar;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,6 +23,7 @@ public class QuestionActivity extends BaseActivity implements CommonBar.CommonBa
     CommonBar cb_ComBar;
 
     private QuestionAdapter questionAdapter;
+    private List<Integer> helpList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +36,14 @@ public class QuestionActivity extends BaseActivity implements CommonBar.CommonBa
     @Override
     public void initView() {
         cb_ComBar.setBarInterface(this);
-
-        rv_question.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        questionAdapter = new QuestionAdapter(this);
+        helpList = new ArrayList<>();
+        helpList.add(R.mipmap.help_1);
+        helpList.add(R.mipmap.help_2);
+        helpList.add(R.mipmap.help_3);
+        LinearLayoutManager llm = new LinearLayoutManager(getApplicationContext());
+        llm.setOrientation(LinearLayoutManager.HORIZONTAL);
+        rv_question.setLayoutManager(llm);
+        questionAdapter = new QuestionAdapter(this, helpList);
         rv_question.setAdapter(questionAdapter);
 
     }
@@ -89,6 +96,13 @@ public class QuestionActivity extends BaseActivity implements CommonBar.CommonBa
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        RequestController.getInstance().removeParams();
+
+        questionAdapter = null;
+        rv_question.setLayoutManager(null);
+        rv_question.setAdapter(null);
+        if(helpList != null){
+            helpList.clear();
+            helpList = null;
+        }
     }
 }

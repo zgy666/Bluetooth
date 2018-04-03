@@ -5,9 +5,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.zgy.translate.R;
+
+import java.util.List;
 
 /**
  * Created by zhouguangyue on 2017/12/19.
@@ -16,9 +19,11 @@ import com.zgy.translate.R;
 public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.QuestionViewHolder> {
 
     private Context mContext;
+    private List<Integer> helpList;
 
-    public QuestionAdapter(Context context){
+    public QuestionAdapter(Context context, List<Integer> helpList){
         mContext = context;
+        this.helpList = helpList;
     }
 
     @Override
@@ -29,21 +34,23 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.Questi
 
     @Override
     public void onBindViewHolder(QuestionViewHolder holder, int position) {
-
+        holder.iv.setBackground(mContext.getDrawable(helpList.get(position)));
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return helpList.size();
     }
 
     class QuestionViewHolder extends RecyclerView.ViewHolder{
-        TextView title, content;
+        //TextView title, content;
+        ImageView iv;
 
         private QuestionViewHolder(View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.iq_tv_title);
-            content = itemView.findViewById(R.id.iq_tv_content);
+            //title = itemView.findViewById(R.id.iq_tv_title);
+            //content = itemView.findViewById(R.id.iq_tv_content);
+            iv = itemView.findViewById(R.id.iq_iv);
         }
     }
 
