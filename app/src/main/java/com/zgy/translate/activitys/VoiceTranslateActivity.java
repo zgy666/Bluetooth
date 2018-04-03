@@ -298,7 +298,7 @@ public class VoiceTranslateActivity extends BaseActivity implements VoiceTransla
             deviceConState(BLUETOOTH_OFF);
         }
 
-        if(UserMessageManager.readLoginUser(this) == null){
+        /*if(UserMessageManager.readLoginUser(this) == null){
             iv_guide.setBackground(getResources().getDrawable(R.mipmap.first_1));
             iv_guide.setVisibility(View.VISIBLE);
             iv_guide.setOnClickListener(new View.OnClickListener() {
@@ -314,7 +314,7 @@ public class VoiceTranslateActivity extends BaseActivity implements VoiceTransla
                     }
                 }
             });
-        }
+        }*/
     }
 
     @Override
