@@ -14,7 +14,6 @@ import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.editorpage.ShareActivity;
 import com.umeng.socialize.media.UMImage;
 import com.umeng.socialize.media.UMWeb;
 import com.umeng.socialize.shareboard.SnsPlatform;
@@ -179,7 +178,7 @@ public class MySettingActivity extends BaseActivity implements CommonBar.CommonB
         new ShareAction(MySettingActivity.this).withMedia(web)
                 .setDisplayList(SHARE_MEDIA.WEIXIN, SHARE_MEDIA.WEIXIN_CIRCLE, SHARE_MEDIA.QQ,
                         SHARE_MEDIA.QZONE, SHARE_MEDIA.SMS, SHARE_MEDIA.EMAIL)
-                .addButton("复制链接", "umeng_sharebutton_copy", "copy_icon.png", "copy_icon.png")
+                .addButton("复制链接", "umeng_sharebutton_copy", "copy_icon", "copy_icon")
                 .setShareboardclickCallback(new ShareBoardlistener() {
                     @Override
                     public void onclick(SnsPlatform snsPlatform, SHARE_MEDIA share_media) {
