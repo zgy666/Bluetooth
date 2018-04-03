@@ -1,6 +1,7 @@
 package com.zgy.translate.activitys;
 
 
+import android.content.ClipboardManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,8 +14,11 @@ import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.editorpage.ShareActivity;
 import com.umeng.socialize.media.UMImage;
 import com.umeng.socialize.media.UMWeb;
+import com.umeng.socialize.shareboard.SnsPlatform;
+import com.umeng.socialize.utils.ShareBoardlistener;
 import com.zgy.translate.R;
 import com.zgy.translate.base.BaseActivity;
 import com.zgy.translate.controllers.ActivityController;
@@ -175,27 +179,47 @@ public class MySettingActivity extends BaseActivity implements CommonBar.CommonB
         new ShareAction(MySettingActivity.this).withMedia(web)
                 .setDisplayList(SHARE_MEDIA.WEIXIN, SHARE_MEDIA.WEIXIN_CIRCLE, SHARE_MEDIA.QQ,
                         SHARE_MEDIA.QZONE, SHARE_MEDIA.SMS, SHARE_MEDIA.EMAIL)
-                .setCallback(new UMShareListener() {
+                .addButton("复制链接", "umeng_sharebutton_copy", "copy_icon.png", "copy_icon.png")
+                .setShareboardclickCallback(new ShareBoardlistener() {
                     @Override
-                    public void onStart(SHARE_MEDIA share_media) {
-                        //Log.i("onStart", "onStart");
-                    }
+                    public void onclick(SnsPlatform snsPlatform, SHARE_MEDIA share_media) {
+                        if(share_media == null){
+                            if(snsPlatform.mKeyword.equals("umeng_sharebutton_copy")){
+                                ClipboardManager cm = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                                cm.setText(URL);
+                                ConfigUtil.showToask(MySettingActivity.this, "复制成功");
+                            }
+                        }
+                        else{
+                            new ShareAction(MySettingActivity.this)
+                                    .setPlatform(share_media)
+                                    .setCallback(new UMShareListener() {
+                                        @Override
+                                        public void onStart(SHARE_MEDIA share_media) {
+                                            //Log.i("onStart", "onStart");
+                                        }
 
-                    @Override
-                    public void onResult(SHARE_MEDIA share_media) {
-                        ConfigUtil.showToask(MySettingActivity.this, "分享成功");
-                    }
+                                        @Override
+                                        public void onResult(SHARE_MEDIA share_media) {
+                                            ConfigUtil.showToask(MySettingActivity.this, "分享成功");
+                                        }
 
-                    @Override
-                    public void onError(SHARE_MEDIA share_media, Throwable throwable) {
-                        ConfigUtil.showToask(MySettingActivity.this, "分享失败" + throwable.getMessage());
-                    }
+                                        @Override
+                                        public void onError(SHARE_MEDIA share_media, Throwable throwable) {
+                                            ConfigUtil.showToask(MySettingActivity.this, "分享失败" + throwable.getMessage());
+                                        }
 
-                    @Override
-                    public void onCancel(SHARE_MEDIA share_media) {
-                        ConfigUtil.showToask(MySettingActivity.this, "取消分享");
+                                        @Override
+                                        public void onCancel(SHARE_MEDIA share_media) {
+                                            ConfigUtil.showToask(MySettingActivity.this, "取消分享");
+                                        }
+                                    })
+                                    .withMedia(web)
+                                    .share();
+                        }
                     }
-                }).open();
+                })
+              .open();
     }
 
     @Override
