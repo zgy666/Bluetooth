@@ -706,7 +706,7 @@ public class VoiceTranslateActivity extends BaseActivity implements VoiceTransla
             return;
         }
         if(isSpeech){
-            ConfigUtil.showToask(this, "已启动语音功能");
+            ConfigUtil.showToask(this, "正在进行语音操作...");
             return;
         }
         if(order.contains("o") || order.contains("c")){
