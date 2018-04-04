@@ -64,6 +64,10 @@ public class SplashActivity extends BaseActivity{
         }
         if(!ConfigUtil.isNetWorkConnected(this)){
             ConfigUtil.showToask(this, "请检查网络!");
+            GlobalParams.IS_NET_FLAG = false;
+        }
+        else{
+            GlobalParams.IS_NET_FLAG = true;
         }
     }
 
