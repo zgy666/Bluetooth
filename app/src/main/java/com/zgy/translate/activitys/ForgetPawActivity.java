@@ -94,6 +94,9 @@ public class ForgetPawActivity extends BaseActivity implements CommonBar.CommonB
     }
 
     @OnClick(R.id.afpp_tv_sendCode) void sendCode(){
+        if(!returnNetState()){
+            return;
+        }
         String phone = et_phone.getText().toString();
         if(isSend){
             ConfigUtil.showToask(this, GlobalConstants.SEND_CODE);

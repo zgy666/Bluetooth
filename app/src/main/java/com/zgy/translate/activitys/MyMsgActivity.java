@@ -324,6 +324,9 @@ public class MyMsgActivity extends BaseActivity implements CommonBar.CommonBarIn
 
     /**统一请求*/
     private void callRequest(String tag, String data){
+        if(!returnNetState()){
+            return;
+        }
         super.progressDialog.show();
         request = new CommonRequest();
         switch (tag){

@@ -154,6 +154,9 @@ public class MySettingActivity extends BaseActivity implements CommonBar.CommonB
     }
 
     @OnClick(R.id.ams_tv_exit) void exi(){
+        if(!returnNetState()){
+            return;
+        }
         isExit = true;
         super.progressDialog.show();
         CommonRequest request = new CommonRequest();

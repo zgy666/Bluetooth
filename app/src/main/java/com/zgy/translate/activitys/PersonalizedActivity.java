@@ -91,6 +91,9 @@ public class PersonalizedActivity extends BaseActivity implements CommonBar.Comm
     }
 
     @OnClick(R.id.ap_tv_submit) void submit(){
+        if(!returnNetState()){
+            return;
+        }
         String content = et_content.getText().toString();
         /*if(StringUtil.isEmpty(content)){
             ConfigUtil.showToask(this, GlobalConstants.NULL_MSG);

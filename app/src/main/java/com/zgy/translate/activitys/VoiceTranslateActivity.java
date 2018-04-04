@@ -925,9 +925,11 @@ public class VoiceTranslateActivity extends BaseActivity implements VoiceTransla
     private void checkNetState(boolean state){
         if(state){
             isNet = true;
+            GlobalParams.IS_NET_FLAG = true;
             vs_unableConn.setVisibility(View.GONE);
         }else{
             isNet = false;
+            GlobalParams.IS_NET_FLAG = false;
             vs_unableConn.setVisibility(View.VISIBLE);
             stopAni();
         }

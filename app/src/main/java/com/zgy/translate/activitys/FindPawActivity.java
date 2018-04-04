@@ -102,6 +102,9 @@ public class FindPawActivity extends BaseActivity implements CommonBar.CommonBar
     }
 
     @OnClick(R.id.afp_tv_submit) void submit(){
+        if(!returnNetState()){
+            return;
+        }
         paw = et_paw.getText().toString();
         String pasAg = et_pawAgain.getText().toString();
         if(StringUtil.isEmpty(paw) || StringUtil.isEmpty(pasAg)){

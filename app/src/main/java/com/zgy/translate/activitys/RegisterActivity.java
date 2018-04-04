@@ -104,6 +104,9 @@ public class RegisterActivity extends BaseActivity implements CommonBar.CommonBa
 
     /**发送验证码*/
     @OnClick(R.id.ar_tv_sendCode) void sendCode(){
+        if(!returnNetState()){
+            return;
+        }
         if(isSend){
             ConfigUtil.showToask(this, "验证码已发");
             return;
@@ -125,6 +128,9 @@ public class RegisterActivity extends BaseActivity implements CommonBar.CommonBa
 
     /**注册*/
     @OnClick(R.id.ar_tv_goRegister) void goRegister(){
+        if(!returnNetState()){
+            return;
+        }
         phone = et_phoneNum.getText().toString();
         String code = et_phoneCode.getText().toString();
         paw = et_paw.getText().toString();

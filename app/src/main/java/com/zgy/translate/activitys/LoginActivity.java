@@ -81,6 +81,9 @@ public class LoginActivity extends BaseActivity implements RequestController.Req
     }
 
     @OnClick(R.id.al_tv_login) void login(){
+        if(!returnNetState()){
+            return;
+        }
         String num = et_phoneNum.getText().toString();
         String paw = et_phonePaw.getText().toString();
         if(StringUtil.isEmpty(num) || StringUtil.isEmpty(paw)){

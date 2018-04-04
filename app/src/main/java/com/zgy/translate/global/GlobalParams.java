@@ -26,6 +26,7 @@ public class GlobalParams {
     public static String BLUETOOTH_MAC; //蓝牙mac地址
     public static BluetoothDevice BlUETOOTH_DEVICE; // 连接蓝牙
 
+    public static boolean IS_NET_FLAG = false;
 
 
 }

@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ProgressBar;
 
 import com.zgy.translate.controllers.ActivityController;
+import com.zgy.translate.global.GlobalParams;
 import com.zgy.translate.managers.AppReceiverManager;
 import com.zgy.translate.utils.ConfigUtil;
 
@@ -21,8 +22,8 @@ public abstract class BaseActivity extends AppCompatActivity implements AppRecei
 
 
     private AppReceiverManager.BluetoothConnectionStateReceiver bluetoothConnectionStateReceiver; //蓝牙连接状态
-
     public ProgressDialog progressDialog;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,9 +49,28 @@ public abstract class BaseActivity extends AppCompatActivity implements AppRecei
     }
 
     @Override
+    public void netConnected() {
+        GlobalParams.IS_NET_FLAG = true;
+    }
+
+    @Override
+    public void disNetConnected() {
+        GlobalParams.IS_NET_FLAG = false;
+    }
+
+    public boolean returnNetState(){
+        if(GlobalParams.IS_NET_FLAG){
+            return true;
+        }
+        else {
+            ConfigUtil.showToask(this, "网络连接异常，请稍后重试!");
+            return false;
+        }
+    }
+
+    @Override
     protected void onPause() {
         super.onPause();
-
     }
 
 

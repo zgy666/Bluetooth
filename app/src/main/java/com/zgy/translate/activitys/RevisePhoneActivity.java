@@ -94,6 +94,9 @@ public class RevisePhoneActivity extends BaseActivity implements CommonBar.Commo
     }
 
     @OnClick(R.id.arp_tv_sendCode) void sendCode(){
+        if(!returnNetState()){
+            return;
+        }
         if(isSend){
             ConfigUtil.showToask(this, "验证码已发");
             return;
@@ -114,6 +117,9 @@ public class RevisePhoneActivity extends BaseActivity implements CommonBar.Commo
     }
 
     @OnClick(R.id.arp_tv_sumbit) void sumbit(){
+        if(!returnNetState()){
+            return;
+        }
         String num = et_phone.getText().toString();
         String code = et_code.getText().toString();
         if(StringUtil.isEmpty(num) || StringUtil.isEmpty(code)){
