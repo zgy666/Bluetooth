@@ -45,7 +45,7 @@ public class CreateBlueManager implements BluetoothProfileManagerInterface{
     public void init(){
 
         profileManager = new BluetoothProfileManager(mContext, this);
-        profileManager.getBluetoothProfile();
+        //profileManager.getBluetoothProfile();
 
     }
 

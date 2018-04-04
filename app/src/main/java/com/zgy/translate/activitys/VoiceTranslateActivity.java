@@ -298,6 +298,10 @@ public class VoiceTranslateActivity extends BaseActivity implements VoiceTransla
             deviceConState(BLUETOOTH_OFF);
         }
 
+        if(createBlueManager != null){
+            createBlueManager.nextGetProfile();
+        }
+
         /*if(UserMessageManager.readLoginUser(this) == null){
             iv_guide.setBackground(getResources().getDrawable(R.mipmap.first_1));
             iv_guide.setVisibility(View.VISIBLE);
@@ -327,6 +331,9 @@ public class VoiceTranslateActivity extends BaseActivity implements VoiceTransla
         super.onStop();
         if(mAudioManager != null){
             mAudioManager.setMode(AudioManager.MODE_NORMAL);
+        }
+        if(createBlueManager != null){
+            createBlueManager.closeSocket();
         }
     }
 
