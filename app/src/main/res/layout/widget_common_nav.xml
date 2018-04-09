@@ -33,8 +33,6 @@
         android:paddingStart="@dimen/padding_5"
         android:textSize="@dimen/text_14"
         android:textColor="@color/colordcdcdc"
-        android:lines="1"
-        android:ellipsize="end"
         android:textDirection="rtl"/>
 
 </RelativeLayout>
