@@ -108,7 +108,7 @@ public class RegisterActivity extends BaseActivity implements CommonBar.CommonBa
             return;
         }
         if(isSend){
-            ConfigUtil.showToask(this, "验证码已发");
+            //ConfigUtil.showToask(this, GlobalConstants.SEND_CODE);
             return;
         }
         String num = et_phoneNum.getText().toString();

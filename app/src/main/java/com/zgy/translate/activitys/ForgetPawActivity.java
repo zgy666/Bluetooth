@@ -99,7 +99,7 @@ public class ForgetPawActivity extends BaseActivity implements CommonBar.CommonB
         }
         String phone = et_phone.getText().toString();
         if(isSend){
-            ConfigUtil.showToask(this, GlobalConstants.SEND_CODE);
+            //ConfigUtil.showToask(this, GlobalConstants.SEND_CODE);
             return;
         }
         if(StringUtil.isEmpty(phone)){

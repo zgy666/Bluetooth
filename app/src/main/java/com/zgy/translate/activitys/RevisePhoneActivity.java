@@ -98,7 +98,7 @@ public class RevisePhoneActivity extends BaseActivity implements CommonBar.Commo
             return;
         }
         if(isSend){
-            ConfigUtil.showToask(this, "验证码已发");
+            //ConfigUtil.showToask(this, GlobalConstants.SEND_CODE);
             return;
         }
         String num = et_phone.getText().toString();
