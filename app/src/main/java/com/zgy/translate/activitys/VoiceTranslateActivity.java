@@ -301,23 +301,6 @@ public class VoiceTranslateActivity extends BaseActivity implements VoiceTransla
             createBlueManager.nextGetProfile();
         }
 
-        /*if(UserMessageManager.readLoginUser(this) == null){
-            iv_guide.setBackground(getResources().getDrawable(R.mipmap.first_1));
-            iv_guide.setVisibility(View.VISIBLE);
-            iv_guide.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    i++;
-                    if(i != 2){
-                        iv_guide.setBackground(getResources().getDrawable(R.mipmap.first_2));
-                    }else {
-                        iv_guide.setVisibility(View.GONE);
-                        UserMessageManager.saveLoginUser(VoiceTranslateActivity.this, "1");
-                        i = 0;
-                    }
-                }
-            });
-        }*/
     }
 
     @Override
