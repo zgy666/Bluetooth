@@ -187,10 +187,4 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/avt_iv_guide"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@mipmap/first_1"
-        android:visibility="gone"/>
 </RelativeLayout>

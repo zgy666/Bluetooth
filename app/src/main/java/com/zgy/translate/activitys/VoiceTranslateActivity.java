@@ -102,7 +102,6 @@ public class VoiceTranslateActivity extends BaseActivity implements VoiceTransla
     @BindView(R.id.avt_ll_noFindDevice) LinearLayout ll_noFindDevice; //没有找到蓝牙设备
     @BindView(R.id.avt_tv_noFindDeviceText) TextView tv_noFindDeviceText; //
     @BindView(R.id.avt_iv_noFindDeviceIcon) ImageView iv_noFindDeviceIcon;
-    @BindView(R.id.avt_iv_guide) ImageView iv_guide; //引导用户使用
 
 
 
