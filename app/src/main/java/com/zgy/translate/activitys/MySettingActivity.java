@@ -171,6 +171,28 @@ public class MySettingActivity extends BaseActivity implements CommonBar.CommonB
     private static final String TITLE = "蓝牙智能耳机翻译APP";
     private static final String URL = "https://www.toppers.com.cn/download/app/e1";
 
+    private UMShareListener umShareListener = new UMShareListener() {
+        @Override
+        public void onStart(SHARE_MEDIA share_media) {
+            //Log.i("onStart", "onStart");
+        }
+
+        @Override
+        public void onResult(SHARE_MEDIA share_media) {
+            ConfigUtil.showToask(MySettingActivity.this, "分享成功");
+        }
+
+        @Override
+        public void onError(SHARE_MEDIA share_media, Throwable throwable) {
+            ConfigUtil.showToask(MySettingActivity.this, "分享失败" + throwable.getMessage());
+        }
+
+        @Override
+        public void onCancel(SHARE_MEDIA share_media) {
+            ConfigUtil.showToask(MySettingActivity.this, "取消分享");
+        }
+    };
+
     /**一键分享*/
     private void showShare() {
         UMImage image = new UMImage(MySettingActivity.this, GlobalParams.userInfoDTO.getIcon());
@@ -193,31 +215,21 @@ public class MySettingActivity extends BaseActivity implements CommonBar.CommonB
                             }
                         }
                         else{
-                            new ShareAction(MySettingActivity.this)
-                                    .setPlatform(share_media)
-                                    .setCallback(new UMShareListener() {
-                                        @Override
-                                        public void onStart(SHARE_MEDIA share_media) {
-                                            //Log.i("onStart", "onStart");
-                                        }
-
-                                        @Override
-                                        public void onResult(SHARE_MEDIA share_media) {
-                                            ConfigUtil.showToask(MySettingActivity.this, "分享成功");
-                                        }
-
-                                        @Override
-                                        public void onError(SHARE_MEDIA share_media, Throwable throwable) {
-                                            ConfigUtil.showToask(MySettingActivity.this, "分享失败" + throwable.getMessage());
-                                        }
-
-                                        @Override
-                                        public void onCancel(SHARE_MEDIA share_media) {
-                                            ConfigUtil.showToask(MySettingActivity.this, "取消分享");
-                                        }
-                                    })
-                                    .withMedia(web)
-                                    .share();
+                            String sms_email = "我入手了一副超棒的耳机！我有一个多功能蓝牙耳机，很智能，功能多，操作也挺方便。推荐给你。" + URL;
+                            if(SHARE_MEDIA.SMS.equals(share_media) || SHARE_MEDIA.EMAIL.equals(share_media)){
+                                new ShareAction(MySettingActivity.this)
+                                        .setPlatform(share_media)
+                                        .setCallback(umShareListener)
+                                        .withText(sms_email)
+                                        .share();
+                            }
+                            else{
+                                new ShareAction(MySettingActivity.this)
+                                        .setPlatform(share_media)
+                                        .setCallback(umShareListener)
+                                        .withMedia(web)
+                                        .share();
+                            }
                         }
                     }
                 })

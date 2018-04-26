@@ -37,9 +37,9 @@ public class QuestionActivity extends BaseActivity implements CommonBar.CommonBa
     public void initView() {
         cb_ComBar.setBarInterface(this);
         helpList = new ArrayList<>();
-        helpList.add(R.mipmap.help_1);
-        helpList.add(R.mipmap.help_2);
-        helpList.add(R.mipmap.help_3);
+        helpList.add(R.mipmap.guide_1);
+        helpList.add(R.mipmap.guide_2);
+        helpList.add(R.mipmap.guide_3);
         LinearLayoutManager llm = new LinearLayoutManager(getApplicationContext());
         llm.setOrientation(LinearLayoutManager.HORIZONTAL);
         rv_question.setLayoutManager(llm);
